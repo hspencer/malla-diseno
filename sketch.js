@@ -103,7 +103,7 @@ class Asignatura{
     let asigContainer = createDiv(
       "<h4>" +
         this.code + "<span class='credits'>" + this.credits + "</span><br><a href=" +
-        this.url + ">" + this.name + "</a></h4>" +
+        this.url + " target='_blank' title='Ficha de "+this.name+" en Casiopea'>" + this.name + "</a></h4>" +
         this.ae +"<br><span class='mencion'>"+this.men+"</span>"
     );
 
