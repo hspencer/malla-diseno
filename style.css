@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
 
 html,
 body {
@@ -23,6 +23,9 @@ h4{
     margin-block-end: 0;
 }
 
+h3{
+  border-bottom: 1px solid #0000004f;
+}
 a{
   text-decoration: none;
   color: rgb(182,79,4)
@@ -58,6 +61,26 @@ a:hover{
   right: 3px;
   bottom: 2px;
   text-align: right;
+}
+
+.tipo{
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 80%;
+  letter-spacing: .1ex;
+  padding: 0 .5ex;
+  border-radius: 1ex;
+  border: 1px solid rgba(0, 0, 0, 0.272);
+  margin-top:.5ex;
+  font-weight: 400;
+}
+
+.optativa{
+  background-color: rgba(0, 128, 0, 0.39);
+}
+
+.obligatoria{
+  background-color: rgba(210, 5, 5, 0.436);
 }
 
 .Taller{

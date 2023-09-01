@@ -100,11 +100,18 @@ class Asignatura{
   }
 
   display(){
+
+    let tipoDeAsignatura;
+    if(this.type === "Obligatoria"){
+    tipoDeAsignatura = "<span class='tipo obligatoria'>Obligatoria</span>";
+    }else{
+      tipoDeAsignatura = "<span class='tipo optativa'>Optativa</span>";
+    }
+
     let asigContainer = createDiv(
       "<h4>" +
         this.code + "<span class='credits'>" + this.credits + "</span><br><a href=" +
-        this.url + " target='_blank' title='Ficha de "+this.name+" en Casiopea'>" + this.name + "</a></h4>" +
-        this.ae +"<br><span class='mencion'>"+this.men+"</span>"
+        this.url + " target='_blank' title='Ficha de "+this.name+" en Casiopea'>" + this.name + "</a></h4>" + this.ae +"<br>"+tipoDeAsignatura+"<br><span class='mencion'>"+this.men+"</span>"
     );
 
     asigContainer.class("asig "+this.ae); // cada div de asignatura tiene una clase común 'aig' y otra por área de estudio
