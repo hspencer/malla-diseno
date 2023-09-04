@@ -63,6 +63,11 @@ a:hover{
   text-align: right;
 }
 
+.mencion em{
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.58);
+}
+
 .tipo{
   display: inline-block;
   text-transform: uppercase;

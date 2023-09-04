@@ -1,5 +1,17 @@
+
+/*
+
+Malla Curricular de la carrera de Diseño
+e[ad] Escuela de Arquitectura y Diseño PUCV
+
+por: Herbert Spencer
+
+*/
+
+// Declaración de variables globales
 let queryUrl, data;
 let asignaturas = [];
+
 // Función preload() de p5.js que se ejecuta antes de setup().
 // Se utiliza para cargar recursos externos, en este caso, datos JSON.
 function preload() {
@@ -62,7 +74,7 @@ function constructObjects() {
         asig.printouts["Mención"] &&
         asig.printouts["Mención"].length > 0
           ? asig.printouts["Mención"].join(", ")
-          : " ";
+          : "-";
 
     // creao una asignatura de acuerdo a la clase Asignatua definida más abajo (vacía)
     let asignatura = new Asignatura();
@@ -108,10 +120,19 @@ class Asignatura{
       tipoDeAsignatura = "<span class='tipo optativa'>Optativa</span>";
     }
 
+    // ver si tiene mención definida. Se crea una variable temporal "mención"
+    let mencion;
+    if(this.men === "-"){ // cuando no tiene
+      mencion = "";
+    }else{
+      // cuando está definida, arma este string más complejo para el HTML
+      mencion = "<span class='mencion'><em>Mención: </em>"+this.men+"</span>";
+    }
+
     let asigContainer = createDiv(
       "<h4>" +
         this.code + "<span class='credits'>" + this.credits + "</span><br><a href=" +
-        this.url + " target='_blank' title='Ficha de "+this.name+" en Casiopea'>" + this.name + "</a></h4>" + this.ae +"<br>"+tipoDeAsignatura+"<br><span class='mencion'>"+this.men+"</span>"
+        this.url + " target='_blank' title='Ficha de "+this.name+" en Casiopea'>" + this.name + "</a></h4>" + this.ae +"<br>"+tipoDeAsignatura+"<br>"+mencion
     );
 
     asigContainer.class("asig "+this.ae); // cada div de asignatura tiene una clase común 'aig' y otra por área de estudio
@@ -170,7 +191,7 @@ class Asignatura{
     // ahora vamos a darle la altura de acuerdo a los créditos
     
     let creditsNum = parseFloat(this.credits); // convertir de texto a número
-    let heightVal = map(creditsNum, 2, 12, 120, 300);
+    let heightVal = map(creditsNum, 2, 12, 120, 250); // 120-250px rango de altura mapeada
     asigContainer.style('height', heightVal + 'px');
   }
 }
