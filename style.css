@@ -18,6 +18,16 @@ body {
   min-height: 100px;
 }
 
+#selectors{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: .5em;
+}
+
+#selector select{
+  border-radius: 4px;
+}
+
 h4{
     margin-block-start: 0;
     margin-block-end: 0;
@@ -46,7 +56,9 @@ a:hover{
 
 .credits{
   display: inline-block;
-  background-color: rgba(0, 0, 0, .8);
+  background-color: rgba(0, 0, 0, 0.37);
+  box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.564);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.831);
   float: right;
   padding: .5ex 1.2ex;
   color: white;
